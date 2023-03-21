@@ -55,6 +55,18 @@ class Character {
       }
     }
   }
+
+  castSpell(spellName) {
+    console.log(`((((( Casting Spell ${spellName})))))`);
+    for(let i = 0; i < this.spells.length; i++) {
+      const spell = this.spells[i];
+      if(spell.name === spellName) {
+        
+      }
+    }
+  }
+
+
 }
 
 module.exports = Character;

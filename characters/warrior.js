@@ -1,11 +1,13 @@
 const Character = require('./character');
 const fireball = require('../spells/fireball');
-const weapon = require('../weapons/weapon');
+const lazer = require('../weapons/lazer');
 
 class Warrior extends Character {
   constructor(name){
     super(name, 'warrior', 2, 10, 4, 4, 100, 200);
-    this.spells.push(fireball)
+    this.spells.push(fireball);
+    this.weapons.push(lazer);
+  
   }
 }
 
