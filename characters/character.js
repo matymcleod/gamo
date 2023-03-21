@@ -16,21 +16,22 @@ class Character {
   }
 
   levelUp() {
+    const levellingUp = `* * * LEVELLING UP ${this.className} * * *`;
     this.level += 1;
-    if(this.className === 'warrior') {
-      console.log(`***** Leveling up ${this.className} *****`);
-      this.attack = this.attack + 1;
-      this.health = this.health + 11;
-      this.mana = this.mana + 2;
-    } else if(this.className === 'warlock') {
-      console.log(`***** Leveling up ${this.className} *****`);
-      this.mana = this.mana + 17;
-      this.magic = this.magic = 1;
-    } else if(this.className === 'shaman') {
-      console.log(`***** Leveling up ${this.className} *****`);
-      this.health = this.health + 29;
-      this.mana = this.mana + 11;
-      this.speed = this.speed + 1;
+    if(this.className === 'Warrior') {
+      console.log(levellingUp);
+      this.attack += 1;
+      this.health += 11;
+      this.mana += 2;
+    } else if(this.className === 'Warlock') {
+      console.log(levellingUp);
+      this.mana += 17;
+      this.magic += 1;
+    } else if(this.className === 'Shaman') {
+      console.log(levellingUp);
+      this.health += 29;
+      this.mana += 11;
+      this.speed += 1;
     }
   }
 
