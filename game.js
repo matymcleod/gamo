@@ -22,4 +22,4 @@ console.log(shaman);
 console.log(shaman.getDamage());
 
 const pet = new Pet('Dusty');
-// console.log(pet);
+console.log(pet);
