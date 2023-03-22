@@ -13,6 +13,8 @@ class Character {
     this.weapons = [];
     this.pets = [];
     this.activePet = null;
+    this.activeSpell = null;
+    this.equippedWeapon = null;
   }
 
   levelUp() {
@@ -37,10 +39,24 @@ class Character {
 
   getDamage() {
     // I need a way to keep track of a character's activePet if they have a pet then we get the pets damage.
+    const magicDamage = this.magic;
     if(this.activePet) {
       const petDamage = this.activePet.damage;
-      const magicDamage = this.magic;
       return petDamage + magicDamage;
+    } 
+    
+    else if(this.activeSpell) {
+      const spellDamage = this.activeSpell.power;
+      return spellDamage + magicDamage;
+    } 
+    
+    else if(this.equippedWeapon){
+      const weaponDamage = this.equippedWeapon.damage;
+      return this.attack += weaponDamage;
+
+    } 
+    else {
+      return this.attack += 0;
     }
 
   }
@@ -53,21 +69,30 @@ class Character {
       const pet = this.pets[i];
       if(pet.name === petName) {
         this.activePet = pet;
-      }
+      } 
     }
   }
+  
 
   castSpell(spellName) {
-    console.log(`((((( Casting Spell ${spellName})))))`);
+    console.log(`((((( Casting Spell ${spellName} )))))`);
     for(let i = 0; i < this.spells.length; i++) {
       const spell = this.spells[i];
       if(spell.name === spellName) {
-        
+        this.activeSpell = spell;
       }
     }
   }
 
-
+  equipWeapon(weaponName) {
+    console.log(`((((( Equipping Weapon ${weaponName} )))))`)
+    for(let i = 0; i < this.weapons.length; i++) {
+      const weapon = this.weapons[i];
+      if(weapon.name === weaponName) {
+        this.equippedWeapon = weapon;
+      }
+    }
+  }
 }
 
 module.exports = Character;
