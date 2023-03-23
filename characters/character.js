@@ -14,7 +14,6 @@ class Character {
     this.pets = [];
     this.activePet = null;
     this.activeSpell = null;
-    this.equippedWeapon = null;
   }
 
   levelUp() {
@@ -38,27 +37,18 @@ class Character {
   }
 
   getDamage() {
-    // I need a way to keep track of a character's activePet if they have a pet then we get the pets damage.
+    // If a character has an activePet, we take the activePet's damage as starting value, and add it to the character's magic damage.
     const magicDamage = this.magic;
     if(this.activePet) {
       const petDamage = this.activePet.damage;
       return petDamage + magicDamage;
-    } 
-    
-    else if(this.activeSpell) {
+    } else if(this.activeSpell) {
       const spellDamage = this.activeSpell.power;
       return spellDamage + magicDamage;
-    } 
-    
-    else if(this.equippedWeapon){
+    } else if(this.equippedWeapon){
       const weaponDamage = this.equippedWeapon.damage;
-      return this.attack += weaponDamage;
-
+      return this.attack + weaponDamage;
     } 
-    else {
-      return this.attack += 0;
-    }
-
   }
 
   summonPet(petName) {
@@ -73,7 +63,7 @@ class Character {
     }
   }
   
-
+// If a character is casting a spell, we take the spell's damage and add it to the character's magic damage.
   castSpell(spellName) {
     console.log(`((((( Casting Spell ${spellName} )))))`);
     for(let i = 0; i < this.spells.length; i++) {
@@ -83,7 +73,7 @@ class Character {
       }
     }
   }
-
+// If a character has neither an activePet, nor a spell, we take their weapon's damage (if they have an equipped one, if not, use 0), and add it to the character's attack damage.
   equipWeapon(weaponName) {
     console.log(`((((( Equipping Weapon ${weaponName} )))))`)
     for(let i = 0; i < this.weapons.length; i++) {
