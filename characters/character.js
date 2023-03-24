@@ -38,16 +38,16 @@ class Character {
 
   getDamage() {
     // If a character has an activePet, we take the activePet's damage as starting value, and add it to the character's magic damage.
-    const magicDamage = this.magic;
+    // const magicDamage = this.magic;
     if(this.activePet) {
       const petDamage = this.activePet.damage;
-      return petDamage + magicDamage;
+      return this.magic += petDamage;
     } else if(this.activeSpell) {
       const spellDamage = this.activeSpell.power;
-      return spellDamage + magicDamage;
+      return this.magic += spellDamage;
     } else if(this.equippedWeapon){
       const weaponDamage = this.equippedWeapon.damage;
-      return this.attack + weaponDamage;
+      return this.attack += weaponDamage;
     } 
   }
 
@@ -74,6 +74,12 @@ class Character {
     }
   }
 // If a character has neither an activePet, nor a spell, we take their weapon's damage (if they have an equipped one, if not, use 0), and add it to the character's attack damage.
+
+  addWeapon(weapon) {
+    this.weapons.push(weapon);
+  }
+
+  // Set's equippedWeapon as a property of "this" Character class and set its value to whatever is passed into weaponName as an argument. 
   equipWeapon(weaponName) {
     console.log(`((((( Equipping Weapon ${weaponName} )))))`)
     for(let i = 0; i < this.weapons.length; i++) {
@@ -83,6 +89,7 @@ class Character {
       }
     }
   }
+
 }
 
 module.exports = Character;
