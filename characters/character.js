@@ -52,8 +52,7 @@ class Character {
   }
 
   summonPet(petName) {
-    // if we havae a pet in our this.pets array that matches the name passed in as an argument to this fuction, let's summon it.
-    // we can loop over the pets we have to find it.
+    // Keeping track of summoned pet. Checks if this.pets matches the petName being passed in. If it does, then activePet goes from null to that matched pet{}.
     console.log(`((((( Summoning ${petName} )))))`)
     for(let i = 0; i < this.pets.length; i++) {
       const pet = this.pets[i];
@@ -63,7 +62,7 @@ class Character {
     }
   }
   
-// If a character is casting a spell, we take the spell's damage and add it to the character's magic damage.
+// Keeping track of activeSpell. Checks if this.spells matches the spell being passed in as an argument, if so, activeSpell changes from null to the argument/spellName to the matched spell{}.
   castSpell(spellName) {
     console.log(`((((( Casting Spell ${spellName} )))))`);
     for(let i = 0; i < this.spells.length; i++) {
