@@ -14,7 +14,7 @@ shaman.getDamage();
 console.log(shaman);
 
 async function gameLoop (){
-  const fight = await prompt(`Pick your contender ${config.classNames}`);
+  const fight = await prompt(`Pick your contender ${config}`);
   console.log(fight);
 }
 

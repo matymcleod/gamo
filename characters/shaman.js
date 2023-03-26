@@ -4,10 +4,11 @@ const Weapon = require('../weapons/weapon');
 const thunderFeury = require('../weapons/thunderFeury');
 const lightHeal = require('../spells/lightheal');
 const lazer = require('../weapons/lazer');
+const config = require('../config/classNames');
 
 class Shaman extends Character {
   constructor(name){
-    super(name, 'Shaman', 1, 1, 1, 1, 100, 100);
+    super(name, config.shamanClassName, 1, 1, 1, 1, 100, 100);
     const fireElemental = new Pet('Fire Elemental', 4);
     const stick = new Weapon('stick', 1);
     this.pets.push(fireElemental);

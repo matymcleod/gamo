@@ -1,3 +1,4 @@
+const config = require('../config/classNames');
 class Character {
   constructor(name, className, attack, magic, defense, speed, health, mana){
     this.name = name;
@@ -19,16 +20,16 @@ class Character {
   levelUp() {
     const levellingUp = `* * * LEVELLING UP ${this.className} * * *`;
     this.level += 1;
-    if(this.className === 'Warrior') {
+    if(this.className === config.warriorClassName) {
       console.log(levellingUp);
       this.attack += 1;
       this.health += 11;
       this.mana += 2;
-    } else if(this.className === 'Warlock') {
+    } else if(this.className === config.warlockClassName) {
       console.log(levellingUp);
       this.mana += 17;
       this.magic += 1;
-    } else if(this.className === 'Shaman') {
+    } else if(this.className === config.shamanClassName) {
       console.log(levellingUp);
       this.health += 29;
       this.mana += 11;
