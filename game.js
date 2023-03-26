@@ -5,6 +5,9 @@ const Pet = require('./characters/pet');
 
 const shaman = new Shaman('Default');
 console.log(shaman);
-console.log(shaman.getDamage());
+shaman.levelUp();
+shaman.summonPet('Fire Elemental');
+shaman.castSpell('lightheal');
+shaman.getDamage();
 console.log(shaman);
 

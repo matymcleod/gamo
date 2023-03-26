@@ -1,0 +1,19 @@
+{
+  "name": "gamo",
+  "version": "1.0.0",
+  "description": "GAMO",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matymcleod/gamo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matymcleod/gamo/issues"
+  },
+  "homepage": "https://github.com/matymcleod/gamo#readme"
+}
