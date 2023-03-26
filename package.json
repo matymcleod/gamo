@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/matymcleod/gamo/issues"
   },
-  "homepage": "https://github.com/matymcleod/gamo#readme"
+  "homepage": "https://github.com/matymcleod/gamo#readme",
+  "dependencies": {
+    "prompt-promise": "^1.0.3"
+  }
 }
