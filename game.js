@@ -3,15 +3,7 @@ const Warlock = require('./characters/warlock');
 const Shaman = require('./characters/shaman');
 const Pet = require('./characters/pet');
 const prompt = require('prompt-promise');
-const classNames = require('./config/classNames');
-
-const shaman = new Shaman('Default');
-console.log(shaman);
-shaman.levelUp();
-shaman.summonPet('Fire Elemental');
-shaman.castSpell('lightheal');
-shaman.getDamage();
-console.log(shaman);
+const config = require('./config/classNames');
 
 // BARE MINIMUM:
 // - Choose a class, instantiate your character based on that class. Throw an error if that class is not available.
@@ -21,8 +13,18 @@ console.log(shaman);
 // - IF you defeat all mobs, you win!
 
 async function gameLoop (){
-const classChoice = await prompt(`Pick your contender ${classNames}`);
-  console.log(classChoice);
+
+  // stores classChoice as 'character'
+  let character;
+  
+  // prompt in terminal to pick a character aka className 
+  const classChoice = await prompt(`Pick your contender: shaman, warrior, warlock\n`);
+
+  if(classChoice === shamanClassName)
+
+  // once character is chosen the game begins with an attack from an enemy
+
+  console.log(`${classChoice} prepare to fight!`);
 }
 
 gameLoop();
