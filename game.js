@@ -20,7 +20,15 @@ async function gameLoop (){
   // prompt in terminal to pick a character aka className 
   const classChoice = await prompt(`Pick your contender: shaman, warrior, warlock\n`);
 
-  if(classChoice === shamanClassName)
+  if(classChoice === config.classNames.shamanClassName) {
+    character = new Shaman('Maty');
+  } else if(classChoice === config.classNames.warlockClassName) {
+    character = new Warlock('Chatty')
+  } else if(classChoice === config.classNames.warriorClassName) {
+    character = new Warrior('Patty')
+  } else {
+    throw Error('Please choose a valid character from the given choices')
+  }
 
   // once character is chosen the game begins with an attack from an enemy
 
