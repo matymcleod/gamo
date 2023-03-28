@@ -37,8 +37,11 @@ class Character {
     }
   }
 
-  getDamage() {
+  getDamage(spellName) {
     // If a character has an activePet, we take the activePet's damage as starting value, and add it to the character's magic damage.
+    if(!spellName){
+      return 0;
+    }
     if(this.activePet) {
       const petDamage = this.activePet.damage;
       return this.magic += petDamage;

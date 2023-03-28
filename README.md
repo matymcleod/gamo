@@ -79,7 +79,7 @@ git push origin main <-- push up that commit to your git repo, default branch of
 DAY 8 HOMEWORK:
 [X] 1) Create a mobs folder, mobs class, and some mobs, as well as a mobs array that stores all your mobs.
 [x] 2) run npm init to initialize your repository, and npm install --save prompt-promise to install the prompt package.
-3) in game.js, you can require the prompt-promise package the same way you require local stuff! const prompt = require("prompt-promise")
+[x] 3) in game.js, you can require the prompt-promise package the same way you require local stuff! const prompt = require("prompt-promise")
 4) Create a fun game loop! The world is your oyster.
 BARE MINIMUM:
 - Choose a class, instantiate your character based on that class. Throw an error if that class is not available.
@@ -92,3 +92,7 @@ BARE MINIMUM:
 
 You can add as much as you want other than this. Let users pick a new spell upon level up, add it to their spell array, or summon a new pet... even do different level up stuff based on their class! You can restore the user's HP to full after a level up, or choose not to.
 You can give mobs levels to level up... it's up to you!
+
+
+- create 3 mobs (name, damage, health)
+- push mobs into mobs array in 
