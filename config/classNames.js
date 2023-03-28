@@ -1,7 +1,9 @@
-const classNames = {
-  warriorClassName: 'warrior',
-  warlockClassName: 'warlock',
-  shamanClassName: 'shaman'
+const config = { 
+  classNames: {
+    warriorClassName: 'warrior',
+    warlockClassName: 'warlock',
+    shamanClassName: 'shaman'
+  }
 }
 
-module.exports = classNames;
+module.exports = config;
