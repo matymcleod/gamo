@@ -1,7 +1,6 @@
-class Mob {
-  constructor(name) {
-    this.name = name;
-  }
-}
+const gangster = require('./gangster');
+const slangster = require('./slangster');
 
-module.exports = Mob;
+const mobs = [gangster, slangster];
+
+module.exports = mobs;

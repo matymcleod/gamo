@@ -1,9 +1,5 @@
-const Mob = require('./mobs');
+const Mob = require('./mob');
 
-class Gangster extends Mob {
-  constructor(name){
-    this.name = name;
-  }
-}
+const gangster = new Mob('gangster', 5, 9)
 
-module.exports = Gangster;
+module.exports = gangster;

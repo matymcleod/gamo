@@ -4,6 +4,7 @@ const Shaman = require('./characters/shaman');
 const Pet = require('./characters/pet');
 const prompt = require('prompt-promise');
 const config = require('./config/classNames');
+const mobs = require('./mobs/mobs');
 
 // BARE MINIMUM:
 // - Choose a class, instantiate your character based on that class. Throw an error if that class is not available.
@@ -16,7 +17,10 @@ async function gameLoop (){
 
   // stores classChoice as 'character'
   let character;
-  
+
+  // sets mob to the first element in the mobs array which is gangster[0], and slangster[1]
+  let mob = mobs[0]; 
+
   // prompt in terminal to pick a character aka className 
   const classChoice = await prompt(`Pick your contender: shaman, warrior, warlock\n`);
 
@@ -33,6 +37,7 @@ async function gameLoop (){
   // once character is chosen the game begins with an attack from an enemy
 
   console.log(`${classChoice} prepare to fight!`);
+
 }
 
 gameLoop();
