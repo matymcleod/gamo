@@ -1,4 +1,4 @@
-const gangster = require('./gangster');
+const gangster = require('./badGuyOne');
 const slangster = require('./slangster');
 
 const mobs = [gangster, slangster];

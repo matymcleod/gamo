@@ -33,10 +33,10 @@ async function gameLoop (){
   } else {
     throw Error('Please choose a valid character from the given choices')
   }
+  console.log(`${classChoice} prepare to fight!`);
 
   // once character is chosen the game begins with an attack from an enemy
-
-  console.log(`${classChoice} prepare to fight!`);
+  const enemyChoice = await prompt('Choose your opponent: ')
 
 }
 
