@@ -25,18 +25,25 @@ async function gameLoop (){
   const classChoice = await prompt(`Pick your contender: shaman, warrior, warlock\n`);
 
   if(classChoice === config.classNames.shamanClassName) {
-    character = new Shaman('Maty');
+    character = new Shaman('Shaman');
+    character.health -= mob.damage;
   } else if(classChoice === config.classNames.warlockClassName) {
-    character = new Warlock('Chatty')
+    character = new Warlock('Warlock')
   } else if(classChoice === config.classNames.warriorClassName) {
-    character = new Warrior('Patty')
+    character = new Warrior('Warrior')
   } else {
-    throw Error('Please choose a valid character from the given choices')
+    throw Error('Please choose a valid character from the given choices');
+    
   }
-  console.log(`${classChoice} prepare to fight!`);
+
+  console.log(`${character.name} you are hit by Level One Bad Guy and you loose 10 Health! your health level is: ${character.health}. \nWhat will you use to fight back with? Choose your weapon, spell, or pet: `);
 
   // once character is chosen the game begins with an attack from an enemy
-  const enemyChoice = await prompt('Choose your opponent: ')
+
+  const weaponChoice = await prompt(`What will you fight back with?\n`)
+
+    console.log(weaponChoice)
+  
 
 }
 

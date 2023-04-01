@@ -22,18 +22,18 @@ class Character {
     this.level += 1;
     if(this.className === config.warriorClassName) {
       console.log(levellingUp);
-      this.attack += 1;
-      this.health += 11;
-      this.mana += 2;
+      this.attack += 10;
+      this.health += 10;
+      this.mana += 10;
     } else if(this.className === config.warlockClassName) {
       console.log(levellingUp);
-      this.mana += 17;
-      this.magic += 1;
+      this.mana += 10;
+      this.magic += 10;
     } else if(this.className === config.shamanClassName) {
       console.log(levellingUp);
-      this.health += 29;
-      this.mana += 11;
-      this.speed += 1;
+      this.health += 10;
+      this.mana += 10;
+      this.speed += 10;
     }
   }
 
