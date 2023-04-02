@@ -17,8 +17,10 @@ async function gameLoop (){
 
   // stores classChoice as 'character'
   let character;
+  
+  let weapon;
 
-  // sets mob to the first element in the mobs array which is gangster[0], and slangster[1]
+  // sets mob to the first element in the mobs array which is badGuyOne[0], and then badGuyTwo[1] and badGuyThree[2]
   let mob = mobs[0]; 
 
   // prompt in terminal to pick a character aka className 
@@ -41,8 +43,11 @@ async function gameLoop (){
   // once character is chosen the game begins with an attack from an enemy
 
   const weaponChoice = await prompt(`What will you fight back with?\n`)
-
+  
+    console.log(mob);
     console.log(weaponChoice)
+    mob.health = mob.health + weaponChoice.damage;
+    console.log(mob);
   
 
 }

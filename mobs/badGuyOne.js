@@ -1,5 +1,5 @@
 const Mob = require('./mob');
 
-const badGuyOne = new Mob('badGuyOne', 10, 10);
+const badGuyOne = new Mob('badGuyOne', 10, 100);
 
 module.exports = badGuyOne;
