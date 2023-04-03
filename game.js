@@ -43,11 +43,18 @@ async function gameLoop (){
   // once character is chosen the game begins with an attack from an enemy
 
   const weaponChoice = await prompt(`What will you fight back with?\n`)
-  
-    console.log(mob);
-    console.log(weaponChoice)
-    mob.health = mob.health + weaponChoice.damage;
-    console.log(mob);
+
+    console.log(`You selected ${weaponChoice}`);
+    console.log(`mob.health = ${mob.health}`);
+    console.log(`character.health = ${character.health}`);
+    const damage = character.getDamage(weaponChoice);
+    console.log(`You attacked for ${weaponChoice.damage} damage`);
+    const mobDamage = mob.damage;
+    console.log(`A ${mob.name} hits you for ${mob.damage} damage`);
+    mob.health -= damage;
+    character.health -= mobDamage;
+    console.log(`mob.health = ${mob.health}`);
+    console.log(`character.health = ${character.health}`);
   
 
 }
