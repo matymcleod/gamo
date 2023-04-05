@@ -4,6 +4,7 @@ const Weapon = require('../weapons/weapon');
 const thunderFeury = require('../weapons/thunderFeury');
 const lightHeal = require('../spells/lightheal');
 const lazer = require('../weapons/lazer');
+const fireball = require('../spells/fireball');
 const config = require('../config/classNames');
 
 class Shaman extends Character {
@@ -13,7 +14,7 @@ class Shaman extends Character {
     const stick = new Weapon('stick', 10);
     this.pets.push(fireElemental);
     this.weapons.push(thunderFeury, lazer, stick);
-    this.spells.push(lightHeal);
+    this.spells.push(lightHeal, fireball);
   }
 }
 module.exports = Shaman;
