@@ -42,8 +42,11 @@ class Character {
     if(spellName) {
       const spell = this.spells.find(s => s.name === spellName);
       if(!spell){
+        console.log("That is not a spell - please choose a valid spell");
+        console.log(this.spells);
         return 0;
       }
+      return spell.power;
     }
     
     if(this.activePet) {
