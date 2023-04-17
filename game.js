@@ -40,18 +40,24 @@ async function gameLoop (){
   // once character is chosen the game begins with an attack from an enemy
   let mob = mobs[0];
   console.log(`You are about to fight ${mob.name}`);
-  console.log(`${mob.name} has ${mob.health} health`); 
+  console.log(`${mob.name} Health = ${mob.health}`); 
+  console.log(`${character.name} Health = ${character.health} `);
   while(character.health > 0 && mob.health > 0) {
     const move = await prompt(`What will you fight back with?\n`)
+    
     const damage = character.getDamage(move);
     const mobDamage = mob.damage;
     const health = character.health -= mobDamage;
     const mobHealth = mob.health -= damage;
     console.log(`You selected ${move}`);
     console.log(`You attack for ${damage}`);
-    console.log(`${mob.name} attacks you for ${mobDamage}\n${character.name}'s health is now ${health}\n${mob.name}'s health is now ${mobHealth}`);
+    console.log(`${mob.name} attacks you for ${mobDamage}\n${character.name} Health = ${health}\n${mob.name} Health = ${mobHealth}`);
   }
-  console.log(`GAME OVER`);
+  if(character.health > mob.health){
+    console.log(`GAME OVER ${character.name} WON`);
+  } else {
+    console.log(`GAME OVER ${mob.name} WON`);
+  }
 }
 
 gameLoop();
